@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarSense Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .solar-hero {
+            background: linear-gradient(90deg, #f9d923 0%, #1a237e 100%);
+            color: #fff;
+            padding: 3rem 1rem 2rem 1rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .quick-stats-card {
+            background: #fffbe7;
+            border: 1px solid #ffe082;
+            color: #1a237e;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .live-preview-card {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            color: #1a237e;
+            border-radius: 1rem;
+        }
+        .nav-dashboard .card {
+            transition: transform 0.2s;
+        }
+        .nav-dashboard .card:hover {
+            transform: scale(1.04);
+            box-shadow: 0 4px 16px rgba(26,35,126,0.12);
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="solar-hero mb-4">
+            <h1 class="display-4 fw-bold">SolarSense</h1>
+            <p class="lead">Optimizing Solar, Empowering Future</p>
+        </div>
+        <!-- Quick Stats -->
+        <div class="row mb-4 text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card quick-stats-card py-3">
+                    <h5>Total Energy Saved</h5>
+                    <div class="display-6">100 kWh</div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card quick-stats-card py-3">
+                    <h5>CO₂ Reduced</h5>
+                    <div class="display-6">1.5 kg</div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card quick-stats-card py-3">
+                    <h5>Active Devices</h5>
+                    <div class="display-6">1978647353</div>
+                </div>
+            </div>
+        </div>
+        <!-- Live Data Preview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card live-preview-card p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                            <h6>Live Consumption</h6>
+                            <div class="display-6">1586 kW</div>
+                        </div>
+                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                            <h6>Active Alerts</h6>
+                            <span class="badge bg-danger">70</span>
+                        </div>
+                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                            <h6>Panel Status</h6>
+                            <span class="badge bg-success">Good</span>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <h6>Weather</h6>
+                            <span class="badge bg-info text-dark">Rainy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Graph Section: Energy Analysis -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card p-4">
+                    <h5 class="mb-3">Energy Production & Consumption Analysis</h5>
+                    <canvas id="energyChart" height="200"></canvas>
+                    <button  class="btn btn-primary"><a class="nav-link" href="pages/whether.html">  Click To Check</a></button>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation to Modules -->
+        <div class="row nav-dashboard g-3 mb-4">
+            <div class="col-md-4">
+                <a href="pages/monitoring.html" class="text-decoration-none">
+                    <div class="card h-100 text-center p-4">
+                        <h5>📊 Monitoring & Analytics</h5>
+                        <p class="text-muted">Live graphs, AI analytics, predictions</p>
+                       
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="pages/maintenance.html" class="text-decoration-none">
+                    <div class="card h-100 text-center p-4">
+                        <h5>🛠️ Maintenance</h5>
+                        <p class="text-muted">Panel health, alerts, logs</p>
+                         <p class="text-muted">AI-powered insights</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="pages/impact.html" class="text-decoration-none">
+                    <div class="card h-100 text-center p-4">
+                        <h5>🌍 Environmental Impact</h5>
+                        <p class="text-muted">CO₂ savings, trees saved, charts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="pages/microgrid.html" class="text-decoration-none">
+                    <div class="card h-100 text-center p-4">
+                        <h5>⚡ Microgrid</h5>
+                        <p class="text-muted">Grid simulation, load balancing</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="pages/iot.html" class="text-decoration-none">
+                    <div class="card h-100 text-center p-4">
+                        <h5>📡 IoT Alerts</h5>
+                        <p class="text-muted">Device status, emergency alerts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="pages/login.html" class="text-decoration-none">
+                    <div class="card h-100 text-center p-4">
+                        <h5>👥 User Login</h5>
+                        <p class="text-muted">Role-based access</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <h1>Presenting By The Digital Ascent </h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/include-navbar.js"></script>
+</body>
+</html> 
